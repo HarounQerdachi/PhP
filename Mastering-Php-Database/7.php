@@ -28,12 +28,19 @@
 	Étape 4 - Connectez-vous à la base de données et lisez les données 
 	*/
 	
-	$conn = mysqli_connect("localhost","root","","testing");
+	$mysqli = new mysqli("localhost", "root", "", "testing");
+	$mysqli -> set_charset("utf8");
+
+	$requete = "SELECT * FROM tablee";
+	$resultat = $mysqli -> query($requete);	
 	
-	?>
+	while ($ligne = $resultat -> fetch_assoc()) {
+		echo $ligne['id'] . ' ' . $ligne['nom'] . ' ' . $ligne['prenom'] . ' ';
+		echo $ligne['email'] ;
+	}
+	$mysqli->close();
 
-
-
+	?>  
 
 
 </article><!--MAIN CONTENT-->

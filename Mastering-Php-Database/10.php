@@ -13,16 +13,32 @@
 
 	
 	<?php  
-     class Chien{
-		public $couleur_des_yeux = 'bleu';
-		public $couleur_de_nez = 'black';
-		public $couleur_du_fourrure = 'white';
+class Chien {
+	public $couleur_des_yeux;
+    public $couleur_de_nez;
+    public $couleur_du_fourrure;
 
-		public function AfficherTout() {
-			echo 'my dog have ' . $couleur_des_yeux . ' eyes and ' . $couleur_de_nez . ' nose, ' . $couleur_du_fourrure . 'fur';
-			
-		}
-	 }
+	function set_name($name) {
+	  $this->name = $name;
+	}
+	function get_name() {
+	  return $this->name;
+	}
+  }
+  
+  $couleur_des_yeux = new Chien();
+  $couleur_de_nez = new Chien();
+  $couleur_du_fourrure = new Chien();
+  $couleur_des_yeux->set_name('my dog have bleu eyes,');
+  $couleur_de_nez->set_name('and black nose,');
+  $couleur_du_fourrure->set_name('white fur.');
+  echo $couleur_des_yeux->get_name();
+  echo "<br>";
+  echo $couleur_de_nez->get_name();
+  echo "<br>";
+  echo  $couleur_du_fourrure->get_name();
+  echo "<br>";
+	 
 	/*  
 	Étape 1: Créez une classe appelée Chien
 
